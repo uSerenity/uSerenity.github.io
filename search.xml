@@ -4,13 +4,25 @@
   
     
     <entry>
-      <title></title>
+      <title>虚拟机的搭建</title>
       <link href="/2024/08/19/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
       <url>/2024/08/19/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>也是在B站和csdn上大概看了看教程，基本都差不多</p><h1 id="工具的准备"><a href="#工具的准备" class="headerlink" title="工具的准备"></a>工具的准备</h1><ul><li>VMware Workstation Pro</li><li>Ununtu 22.04</li></ul><p>因为官网下载有点慢，我就用这个<a href="https://blog.csdn.net/weixin_74195551/article/details/127288338?app_version=6.4.1&code=app_1562916241&csdn_share_tail=%7B%22type%22:%22blog%22,%22rType%22:%22article%22,%22rId%22:%22127288338%22,%22source%22:%222401_86639902%22%7D&uLinkId=usr1mkqgl919blen&utm_source=app">CSDN文章</a>里提供的网盘安装包来下载了，感谢</p><hr><h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>安装VMware Workstation Pro基本就是改一下安装位置，然后一直下一步下一步，下载完后需要点击<strong>许可证</strong>输入许可证密钥才可以永久使用，百度一下复制进去就好。<br><img src="https://s2.loli.net/2024/08/19/A3o4v2dm8z1FKyX.jpg" alt="许可证"><br>我用的是 MC60H-DWHD5-H80U9-6V85M-8280D</p><hr><p>完成后即可打开软件<br><img src="https://s2.loli.net/2024/08/19/9i3Bx2W5qFnOEU6.png" alt="wmware"></p><hr><h1 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h1><p>在vmware中新建虚拟机<br>如下图所示按照向导一步一步创建,基本使用推荐设置（图1中第四步需要按照箭头设置）</p><ol><li><img src="https://s2.loli.net/2024/08/19/RapsLtNPOirFeJj.jpg" alt="步骤图1"></li><li><img src="https://s2.loli.net/2024/08/19/oin38scwy4ZqjVl.jpg" alt="步骤图2"></li><li><img src="https://s2.loli.net/2024/08/19/fk3blAtISHrWVwg.jpg" alt="步骤图3"></li><li><img src="https://s2.loli.net/2024/08/19/G2Yofwsje3Oxa5K.jpg" alt="步骤图4"></li></ol><hr><p>完成后编辑虚拟机设置 &gt; CD&#x2F;DVD(SATA) &gt; √使用iso映像文件，即前面下载的ubuntu22.04 &gt; 确定<br><img src="https://s2.loli.net/2024/08/19/fFlQVnjxUtz5py7.png" alt="虚拟机设置"></p><hr><h1 id="启动虚拟机"><a href="#启动虚拟机" class="headerlink" title="启动虚拟机"></a>启动虚拟机</h1><p>开机后下载ubuntu，然后一直继续继续，设置名称密码，漫长的等待之后重启。</p><ol><li><img src="https://s2.loli.net/2024/08/19/7UStJlCYwMyVb2d.jpg" alt="1语言"></li><li><img src="https://s2.loli.net/2024/08/19/nA4UDxS6XzILPre.jpg" alt="正常下载"></li><li><img src="https://s2.loli.net/2024/08/19/TwqVkGaAf4sc6yr.jpg" alt="选地区，用户名密码"></li><li><img src="https://s2.loli.net/2024/08/19/3FYjNa7vubTzkgX.jpg" alt="等待，重启"></li></ol><p>重启后跳过那些出来的界面就好<img src="https://s2.loli.net/2024/08/19/lwJU3ILT2niotzG.jpg" alt="a"></p><hr><h1 id="将文件复制到虚拟机中"><a href="#将文件复制到虚拟机中" class="headerlink" title="将文件复制到虚拟机中"></a>将文件复制到虚拟机中</h1><p>这个我直接安装vmware tools并不能复制文件，所以我选择手动安装<br>在虚拟机的终端里输入以下三个代码进行手动安装vmware tools：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove open-vm-tools</span><br><span class="line">sudo apt-get install open-vm-tools</span><br><span class="line">sudo apt-get install open-vm-tools-desktop</span><br></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2024/08/19/DbznikYJpjr9HwR.jpg" alt="手动安装"></p><p>参考<a href="https://blog.csdn.net/davidhzq/article/details/101621482?app_version=6.4.1&code=app_1562916241&csdn_share_tail=%7B%22type%22:%22blog%22,%22rType%22:%22article%22,%22rId%22:%22101621482%22,%22source%22:%222401_86639902%22%7D&uLinkId=usr1mkqgl919blen&utm_source=app">文章</a></p><h1 id="完成，拍摄快照"><a href="#完成，拍摄快照" class="headerlink" title="完成，拍摄快照"></a>完成，拍摄快照</h1><p><img src="https://s2.loli.net/2024/08/19/aUY5TltSKebGBv3.jpg" alt="拍摄快照"></p>]]></content>
       
       
+      <categories>
+          
+          <category> 虚拟机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 虚拟机 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -26,14 +38,14 @@
       
       <categories>
           
-          <category> 搭建博客 </category>
+          <category> 博客 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 搭建博客 </tag>
+            <tag> 博客 </tag>
             
         </tags>
       
